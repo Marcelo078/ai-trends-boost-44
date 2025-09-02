@@ -2,41 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Design System para Site de IA focado em SEO e Performance 
+Cores em HSL para máxima compatibilidade e performance
 */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 220 13% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 13% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 13% 18%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 220 13% 18%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 220 13% 18%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
 
-    --radius: 0.5rem;
+    --radius: 0.375rem;
+
+    /* Cores personalizadas para o site de IA */
+    --cta-primary: 25 95% 53%;
+    --cta-primary-foreground: 0 0% 100%;
+    
+    --cta-secondary: 217 91% 60%;
+    --cta-secondary-foreground: 0 0% 100%;
+    
+    --success: 120 93% 30%;
+    --success-foreground: 0 0% 100%;
+    
+    --highlight: 45 93% 47%;
+    --highlight-foreground: 220 13% 18%;
+    
+    --tech-accent: 262 83% 58%;
+    --tech-accent-foreground: 0 0% 100%;
+
+    /* Gradientes para CTAs e destaques */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--cta-primary)), hsl(25 95% 45%));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--cta-secondary)), hsl(217 91% 50%));
+    --gradient-tech: linear-gradient(135deg, hsl(var(--tech-accent)), hsl(262 83% 48%));
+    
+    /* Sombras para elementos interativos */
+    --shadow-soft: 0 2px 8px hsl(220 13% 18% / 0.1);
+    --shadow-medium: 0 4px 16px hsl(220 13% 18% / 0.15);
+    --shadow-strong: 0 8px 32px hsl(220 13% 18% / 0.2);
+    
+    /* Transições suaves */
+    --transition-fast: all 0.2s ease;
+    --transition-medium: all 0.3s ease;
+    --transition-slow: all 0.5s ease;
 
     --sidebar-background: 0 0% 98%;
 
@@ -53,6 +84,11 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Animações personalizadas */
+    --animate-fade-in: fadeIn 0.5s ease-in-out;
+    --animate-slide-up: slideUp 0.3s ease-out;
+    --animate-pulse-soft: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   .dark {
@@ -101,5 +137,66 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Animações personalizadas */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Estilos para artigos - Prose */
+  .prose {
+    @apply text-foreground;
+  }
+
+  .prose h2 {
+    @apply text-2xl font-bold mt-8 mb-4 text-foreground border-b border-border pb-2;
+  }
+
+  .prose h3 {
+    @apply text-xl font-semibold mt-6 mb-3 text-foreground;
+  }
+
+  .prose p {
+    @apply mb-4 leading-relaxed text-foreground/90;
+  }
+
+  .prose ul, .prose ol {
+    @apply mb-4 space-y-2;
+  }
+
+  .prose li {
+    @apply leading-relaxed text-foreground/90;
+  }
+
+  .prose strong {
+    @apply font-semibold text-foreground;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-primary pl-4 italic text-muted-foreground my-4;
   }
 }

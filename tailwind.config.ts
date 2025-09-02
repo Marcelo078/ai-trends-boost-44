@@ -61,7 +61,40 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				cta: {
+					primary: 'hsl(var(--cta-primary))',
+					'primary-foreground': 'hsl(var(--cta-primary-foreground))',
+					secondary: 'hsl(var(--cta-secondary))',
+					'secondary-foreground': 'hsl(var(--cta-secondary-foreground))'
+				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
+				highlight: {
+					DEFAULT: 'hsl(var(--highlight))',
+					foreground: 'hsl(var(--highlight-foreground))'
+				},
+				tech: {
+					accent: 'hsl(var(--tech-accent))',
+					'accent-foreground': 'hsl(var(--tech-accent-foreground))'
 				}
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-secondary': 'var(--gradient-secondary)',
+				'gradient-tech': 'var(--gradient-tech)'
+			},
+			boxShadow: {
+				'soft': 'var(--shadow-soft)',
+				'medium': 'var(--shadow-medium)',
+				'strong': 'var(--shadow-strong)'
+			},
+			transitionProperty: {
+				'fast': 'var(--transition-fast)',
+				'medium': 'var(--transition-medium)',
+				'slow': 'var(--transition-slow)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
